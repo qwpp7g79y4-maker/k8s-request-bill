@@ -1,0 +1,20 @@
+{
+  "kind": "PodMetricsList",
+  "items": [
+    {
+      "metadata": {
+        "name": "only",
+        "namespace": "solo"
+      },
+      "containers": [
+        {
+          "name": "m",
+          "usage": {
+            "cpu": "250000000n",
+            "memory": "1048576Ki"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "List",
+  "items": [
+    {
+      "kind": "Pod",
+      "metadata": {
+        "name": "bad",
+        "namespace": "ns"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "web",
+            "resources": {
+              "requests": {
+                "cpu": "lots",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    }
+  ]
+}

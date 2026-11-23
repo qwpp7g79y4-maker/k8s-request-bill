@@ -1,0 +1,91 @@
+{
+  "tool": "k8s-request-bill",
+  "version": "0.1.0",
+  "hours": 1,
+  "currency": "USD",
+  "rates": {
+    "cpu_hour": 0.031,
+    "mem_gib_hour": 0.004
+  },
+  "namespaces": [
+    {
+      "namespace": "batch",
+      "pods": 1,
+      "pods_without_usage": 0,
+      "cpu_request_vcpu": 1,
+      "memory_request_gib": 2,
+      "cpu_limit_vcpu": 0,
+      "memory_limit_gib": 0,
+      "cpu_usage_vcpu": 0.05,
+      "memory_usage_gib": 0.097656,
+      "cpu_over_vcpu": 0.95,
+      "memory_over_gib": 1.902344,
+      "request_cost": 0.039,
+      "over_cost": 0.037059
+    },
+    {
+      "namespace": "kube-system",
+      "pods": 1,
+      "pods_without_usage": 0,
+      "cpu_request_vcpu": 0.1,
+      "memory_request_gib": 0.068359,
+      "cpu_limit_vcpu": 0,
+      "memory_limit_gib": 0.166016,
+      "cpu_usage_vcpu": 0.003,
+      "memory_usage_gib": 0.019531,
+      "cpu_over_vcpu": 0.097,
+      "memory_over_gib": 0.048828,
+      "request_cost": 0.003373,
+      "over_cost": 0.003202
+    },
+    {
+      "namespace": "monitoring",
+      "pods": 1,
+      "pods_without_usage": 1,
+      "cpu_request_vcpu": 2,
+      "memory_request_gib": 4,
+      "cpu_limit_vcpu": 0,
+      "memory_limit_gib": 0,
+      "cpu_usage_vcpu": 0,
+      "memory_usage_gib": 0,
+      "cpu_over_vcpu": 0,
+      "memory_over_gib": 0,
+      "request_cost": 0.078,
+      "over_cost": 0
+    },
+    {
+      "namespace": "shop",
+      "pods": 3,
+      "pods_without_usage": 0,
+      "cpu_request_vcpu": 3,
+      "memory_request_gib": 9,
+      "cpu_limit_vcpu": 6,
+      "memory_limit_gib": 10,
+      "cpu_usage_vcpu": 0.81,
+      "memory_usage_gib": 6.566406,
+      "cpu_over_vcpu": 2.19,
+      "memory_over_gib": 2.433594,
+      "request_cost": 0.129,
+      "over_cost": 0.077624
+    }
+  ],
+  "total": {
+    "pods": 6,
+    "pods_without_usage": 1,
+    "cpu_request_vcpu": 6.1,
+    "memory_request_gib": 15.068359,
+    "cpu_limit_vcpu": 6,
+    "memory_limit_gib": 10.166016,
+    "cpu_usage_vcpu": 0.863,
+    "memory_usage_gib": 6.683594,
+    "cpu_over_vcpu": 3.237,
+    "memory_over_gib": 4.384766,
+    "request_cost": 0.249373,
+    "over_cost": 0.117886
+  },
+  "notes": {
+    "skipped_non_pod_items": 0,
+    "skipped_finished_pods": 1,
+    "usage_without_pod": 0
+  }
+}

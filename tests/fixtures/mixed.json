@@ -1,0 +1,88 @@
+{
+  "kind": "List",
+  "items": [
+    {
+      "kind": "Pod",
+      "metadata": {
+        "name": "run",
+        "namespace": "a"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "x",
+            "resources": {
+              "requests": {
+                "cpu": "1",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "kind": "Pod",
+      "metadata": {
+        "name": "done",
+        "namespace": "a"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "x",
+            "resources": {
+              "requests": {
+                "cpu": "8",
+                "memory": "8Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Succeeded"
+      }
+    },
+    {
+      "kind": "Pod",
+      "metadata": {
+        "name": "broke",
+        "namespace": "b"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "x",
+            "resources": {
+              "requests": {
+                "cpu": "8",
+                "memory": "8Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Failed"
+      }
+    },
+    {
+      "kind": "Service",
+      "metadata": {
+        "name": "svc",
+        "namespace": "a"
+      }
+    },
+    {
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "cm",
+        "namespace": "a"
+      }
+    }
+  ]
+}

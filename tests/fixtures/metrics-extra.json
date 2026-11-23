@@ -1,0 +1,35 @@
+{
+  "kind": "PodMetricsList",
+  "items": [
+    {
+      "metadata": {
+        "name": "only",
+        "namespace": "solo"
+      },
+      "containers": [
+        {
+          "name": "m",
+          "usage": {
+            "cpu": "1",
+            "memory": "1Gi"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "ghost",
+        "namespace": "solo"
+      },
+      "containers": [
+        {
+          "name": "m",
+          "usage": {
+            "cpu": "1",
+            "memory": "1Gi"
+          }
+        }
+      ]
+    }
+  ]
+}

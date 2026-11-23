@@ -1,0 +1,101 @@
+{
+  "kind": "List",
+  "items": [
+    {
+      "kind": "Pod",
+      "metadata": {
+        "name": "peak",
+        "namespace": "init"
+      },
+      "spec": {
+        "initContainers": [
+          {
+            "name": "i",
+            "resources": {
+              "requests": {
+                "cpu": "3",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "m",
+            "resources": {
+              "requests": {
+                "cpu": "1",
+                "memory": "2Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "kind": "Pod",
+      "metadata": {
+        "name": "sidecar",
+        "namespace": "init"
+      },
+      "spec": {
+        "initContainers": [
+          {
+            "name": "s",
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "256Mi"
+              }
+            },
+            "restartPolicy": "Always"
+          }
+        ],
+        "containers": [
+          {
+            "name": "m",
+            "resources": {
+              "requests": {
+                "cpu": "750m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "kind": "Pod",
+      "metadata": {
+        "name": "overhead",
+        "namespace": "init"
+      },
+      "spec": {
+        "overhead": {
+          "cpu": "250m",
+          "memory": "128Mi"
+        },
+        "containers": [
+          {
+            "name": "m",
+            "resources": {
+              "requests": {
+                "cpu": "750m",
+                "memory": "896Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    }
+  ]
+}

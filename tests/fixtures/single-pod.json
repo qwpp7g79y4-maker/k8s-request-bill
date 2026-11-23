@@ -1,0 +1,23 @@
+{
+  "kind": "Pod",
+  "metadata": {
+    "name": "only",
+    "namespace": "solo"
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "m",
+        "resources": {
+          "requests": {
+            "cpu": "2",
+            "memory": "4Gi"
+          }
+        }
+      }
+    ]
+  },
+  "status": {
+    "phase": "Running"
+  }
+}

@@ -1,0 +1,12 @@
+NAMESPACE    PODS  CPU_REQ  MEM_REQ  CPU_LIM  MEM_LIM  CPU_USE  MEM_USE  CPU_OVER  MEM_OVER  REQ_COST  OVER_COST
+batch           1    1.000    2.000    0.000    0.000    0.050    0.098     0.950     1.902    0.0390     0.0371
+kube-system     1    0.100    0.068    0.000    0.166    0.003    0.020     0.097     0.049    0.0034     0.0032
+monitoring      1    2.000    4.000    0.000    0.000    0.000    0.000     0.000     0.000    0.0780     0.0000
+shop            3    3.000    9.000    6.000   10.000    0.810    6.566     2.190     2.434    0.1290     0.0776
+TOTAL           6    6.100   15.068    6.000   10.166    0.863    6.684     3.237     4.385    0.2494     0.1179
+
+CPU in vCPU, memory in GiB.
+Cost for 1 h at 0.031 USD/vCPU-h and 0.004 USD/GiB-h.
+OVER = sum over pods of max(request - usage, 0).
+note: 1 pod(s) have no metrics; they count in REQ but not in USE or OVER.
+note: 1 Succeeded/Failed pod(s) left out.

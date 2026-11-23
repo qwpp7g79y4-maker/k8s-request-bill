@@ -1,0 +1,92 @@
+{
+  "kind": "PodMetricsList",
+  "apiVersion": "metrics.k8s.io/v1beta1",
+  "metadata": {},
+  "items": [
+    {
+      "metadata": {
+        "name": "web-1",
+        "namespace": "shop"
+      },
+      "timestamp": "2026-11-09T12:00:00Z",
+      "window": "15s",
+      "containers": [
+        {
+          "name": "app",
+          "usage": {
+            "cpu": "120m",
+            "memory": "300Mi"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "web-2",
+        "namespace": "shop"
+      },
+      "timestamp": "2026-11-09T12:00:00Z",
+      "window": "15s",
+      "containers": [
+        {
+          "name": "app",
+          "usage": {
+            "cpu": "90m",
+            "memory": "280Mi"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "db-0",
+        "namespace": "shop"
+      },
+      "timestamp": "2026-11-09T12:00:00Z",
+      "window": "15s",
+      "containers": [
+        {
+          "name": "postgres",
+          "usage": {
+            "cpu": "600m",
+            "memory": "6Gi"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "worker-1",
+        "namespace": "batch"
+      },
+      "timestamp": "2026-11-09T12:00:00Z",
+      "window": "15s",
+      "containers": [
+        {
+          "name": "worker",
+          "usage": {
+            "cpu": "50m",
+            "memory": "100Mi"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "name": "coredns-1",
+        "namespace": "kube-system"
+      },
+      "timestamp": "2026-11-09T12:00:00Z",
+      "window": "15s",
+      "containers": [
+        {
+          "name": "coredns",
+          "usage": {
+            "cpu": "3m",
+            "memory": "20Mi"
+          }
+        }
+      ]
+    }
+  ]
+}
