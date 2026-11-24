@@ -1,18 +1,34 @@
 # Quality
 
-Measured on branch `w5-W-100` (linux x86_64, Rust 1.99.0) with
-`cargo test`, `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`
-and `cargo publish --dry-run`.
+Dutch version: [QUALITY.nl.md](QUALITY.nl.md).
 
-- Tests: 167 tests (102 unit in the library, 0 in the binary, 53 in
-  `tests/cli.rs`, 12 in `tests/claims.rs`); 0 failed, 0 ignored.
-  `tests/claims.rs` counts the `#[test]` functions and fails if README or this
-  file state another number.
-- `cargo fmt --check`: clean.
-- `cargo clippy --all-targets -- -D warnings`: clean.
-- `cargo publish --dry-run`: green (nothing is published).
+## Measured
+
+Tested code commit: `a4a1308` (the last commit that is not a pure document;
+every commit after it touches only documentation files).
+
+Date (`date +%F`): 2026-11-24. Machine: linux x86_64, Rust from `~/.cargo/bin`.
+Command: `cargo test --locked --no-fail-fast -j 2`.
+
+Result: 167 tests passed, 0 failed, 0 ignored (102 in the library, 0 in the
+binary, 12 in `tests/claims.rs`, 53 in `tests/cli.rs`, 0 doc-tests).
+
+`tests/claims.rs` counts the `#[test]` functions and fails if README or this
+file state another number.
+
 - Version 0.1.0, `rust-version` 1.85, licences `MIT OR Apache-2.0`.
-- No network or Kubernetes client crates (checked against `Cargo.lock`).
+- No network or Kubernetes client crates (checked against `Cargo.lock` by
+  `claims::no_network_crates_in_the_lockfile`).
+
+## Not run
+
+On this run only `cargo test --locked --no-fail-fast` was run. Not run:
+`cargo fmt --check`, `cargo clippy`, `cargo publish --dry-run`, `cargo deny`,
+`cargo audit`, a release-mode test run, a run on Rust 1.85, a GitHub Actions
+run, fuzzing, mutation testing. The CI file lists fmt, clippy, deny and audit;
+those jobs have not run for this tree because it is not pushed.
+
+This page records checks. It is not a guarantee and it is not a fuzz report.
 
 ## README claim to test
 
@@ -48,25 +64,3 @@ and `cargo publish --dry-run`.
 - Only pods are read; controllers are not resolved.
 - Usage is a point-in-time sample from metrics-server, not a time series.
 - Memory quantities with the milli suffix are accepted and rounded to bytes.
-
-## What was not in the short note
-
-This page records checks. It is not a guarantee and it is not a fuzz report.
-
-On 2026-11-18, on this machine, Linux, with cargo -j 2, these commands finished with exit 0: cargo fmt --all -- --check, cargo clippy --all-targets --locked -- -D warnings, cargo test --locked, and cargo test --release --locked. Debug and release passed the same tests. 0 failed.
-
-Not run that day: cargo deny, cargo audit, a GitHub Actions run, fuzzing, and mutation testing. The CI file lists deny and audit. Those jobs have not run on GitHub for this tree, because this tree is not pushed.
-
-There is no Dutch README. task.md and blueprint.md belong in the repository when they exist. A gitignore line that hides them is a mistake.
-
-## Run of 2026-11-23
-
-Date (`date +%F`): 2026-11-23.
-Command: `cargo test --locked --no-fail-fast`.
-Result: 167 tests passed, 0 failed, 0 ignored (102 in the library, 0 in the binary, 12 in `tests/claims.rs`, 53 in `tests/cli.rs`, 0 doc-tests).
-
-STAND: 167 passed, geslaagd.
-
-## Not run
-
-On this run only `cargo test --locked --no-fail-fast` was run. Not run: `cargo fmt --check`, `cargo clippy`, `cargo publish --dry-run`, `cargo deny`, `cargo audit`, a release-mode test run, a GitHub Actions run, fuzzing, mutation testing.
