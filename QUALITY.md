@@ -4,7 +4,7 @@ Dutch version: [QUALITY.nl.md](QUALITY.nl.md).
 
 ## Measured
 
-Tested commit: `db1e7bb` (`origin/main`), in a clean worktree.
+Tested commit: `17a5446` (the closed-stdout fix), in a clean worktree.
 
 Date (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
 1.99.0, clippy 0.1.99, from `~/.cargo/bin`.
@@ -17,7 +17,7 @@ Date (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
 | `cargo test --release --locked` | passed, exit 0 |
 
 Result of each test run: 169 tests passed, 0 failed, 0 ignored (102 in the
-library, 0 in the binary, 12 in `tests/claims.rs`, 53 in `tests/cli.rs`, 0
+library, 0 in the binary, 12 in `tests/claims.rs`, 55 in `tests/cli.rs`, 0
 doc-tests).
 
 `tests/claims.rs` counts the `#[test]` functions and fails if README or this
@@ -30,7 +30,7 @@ file state another number.
 ## Not run
 
 This measurement ran the four commands above and nothing else. Not run:
-`cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
+Windows: not run. macOS: not run. The closed-stdout probe is active on Linux only; elsewhere it records nothing and the exit code stays 0. `cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
 run. A run on Rust 1.85: not run. A GitHub Actions run: not run. Fuzzing: not
 run. Mutation testing: not run. The CI file lists fmt, clippy, deny and audit;
 the deny and audit jobs have not run for this tree.
