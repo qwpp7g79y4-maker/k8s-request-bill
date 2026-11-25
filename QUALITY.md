@@ -4,7 +4,7 @@ Dutch version: [QUALITY.nl.md](QUALITY.nl.md).
 
 ## Measured
 
-Tested commit: `17a5446` (the closed-stdout fix), in a clean worktree.
+Tested commit: `851805c` (the closed-stdout test limited to Linux), in a clean worktree.
 
 Date (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
 1.99.0, clippy 0.1.99, from `~/.cargo/bin`.
@@ -31,7 +31,7 @@ file state another number.
 
 This measurement ran the four commands above and nothing else. Not run:
 Windows: not run. macOS: not run. The closed-stdout probe is active on Linux only; elsewhere it records nothing and the exit code stays 0. `cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
-run. A run on Rust 1.85: not run. A GitHub Actions run: not run. Fuzzing: not
+run. A run on Rust 1.85: not run. A GitHub Actions run: not run (the earlier run 45698461182 on a6d3620 failed on macOS and macOS-intel on this test). Fuzzing: not
 run. Mutation testing: not run. The CI file lists fmt, clippy, deny and audit;
 the deny and audit jobs have not run for this tree.
 

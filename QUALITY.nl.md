@@ -4,7 +4,7 @@ Engelse versie: [QUALITY.md](QUALITY.md).
 
 ## Gemeten
 
-Geteste commit: `17a5446` (de fix voor gesloten stdout), in een schone worktree.
+Geteste commit: `851805c` (de test voor gesloten stdout beperkt tot Linux), in een schone worktree.
 
 Datum (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
 1.99.0, clippy 0.1.99, uit `~/.cargo/bin`.
@@ -31,7 +31,7 @@ bestand een ander getal noemt.
 
 Deze meting draaide alleen de vier opdrachten hierboven. Niet uitgevoerd:
 Windows: not run. macOS: not run. De probe voor gesloten stdout werkt alleen op Linux; elders legt hij niets vast en blijft de exitcode 0. `cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
-run. Een run op Rust 1.85: not run. Een GitHub Actions-run: not run. Fuzzing:
+run. Een run op Rust 1.85: not run. Een GitHub Actions-run van deze commit: not run (de eerdere run 45698461182 op a6d3620 faalde op macOS en macOS-intel op deze test). Fuzzing:
 not run. Mutatietests: not run. Het CI-bestand noemt fmt, clippy, deny en
 audit; de deny- en audit-jobs zijn voor deze boom niet gedraaid.
 
