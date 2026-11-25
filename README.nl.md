@@ -187,3 +187,5 @@ Zie [QUALITY.nl.md](QUALITY.nl.md) voor de kaart van bewering naar test.
 ## Licentie
 
 MIT OR Apache-2.0, naar keuze. Zie `LICENSE-MIT` en `LICENSE-APACHE`.
+
+De licenties van de externe crates in het programma staan in [THIRD-PARTY-LICENSES.html](THIRD-PARTY-LICENSES.html).

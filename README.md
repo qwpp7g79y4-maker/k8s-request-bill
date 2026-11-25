@@ -180,3 +180,5 @@ See [QUALITY.md](QUALITY.md) for the claim-to-test map.
 ## License
 
 MIT OR Apache-2.0, at your option. See `LICENSE-MIT` and `LICENSE-APACHE`.
+
+The licenses of the third-party crates built into the binary are listed in [THIRD-PARTY-LICENSES.html](THIRD-PARTY-LICENSES.html).
