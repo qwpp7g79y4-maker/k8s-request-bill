@@ -688,7 +688,7 @@ fn works_without_network_or_cluster_config() {
         .success();
 }
 
-#[cfg(unix)]
+#[cfg(target_os = "linux")]
 #[test]
 fn closed_stdout_at_start_is_exit_2_with_a_message() {
     let exe = assert_cmd::cargo::cargo_bin("k8s-request-bill");
