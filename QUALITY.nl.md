@@ -4,14 +4,21 @@ Engelse versie: [QUALITY.md](QUALITY.md).
 
 ## Gemeten
 
-Geteste codecommit: `a4a1308` (de laatste commit die geen puur document is;
-elke commit daarna raakt alleen documentatiebestanden).
+Geteste commit: `db1e7bb` (`origin/main`), in een schone worktree.
 
-Datum (`date +%F`): 2026-11-24. Machine: linux x86_64, Rust uit `~/.cargo/bin`.
-Opdracht: `cargo test --locked --no-fail-fast -j 2`.
+Datum (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
+1.99.0, clippy 0.1.99, uit `~/.cargo/bin`.
 
-Uitkomst: 167 tests geslaagd, 0 mislukt, 0 genegeerd (102 in de bibliotheek, 0
-in het binary, 12 in `tests/claims.rs`, 53 in `tests/cli.rs`, 0 doctests).
+| Opdracht | Uitkomst |
+| --- | --- |
+| `cargo fmt --check` | geslaagd, exit 0 |
+| `cargo clippy --all-targets --locked -- -D warnings` | geslaagd, exit 0, geen waarschuwingen |
+| `cargo test --locked` | geslaagd, exit 0 |
+| `cargo test --release --locked` | geslaagd, exit 0 |
+
+Uitkomst van elke testrun: 167 tests geslaagd, 0 mislukt, 0 genegeerd (102 in
+de bibliotheek, 0 in het binary, 12 in `tests/claims.rs`, 53 in
+`tests/cli.rs`, 0 doctests).
 
 `tests/claims.rs` telt de `#[test]`-functies en faalt als README of dit
 bestand een ander getal noemt.
@@ -22,12 +29,11 @@ bestand een ander getal noemt.
 
 ## Niet uitgevoerd
 
-In deze run is alleen `cargo test --locked --no-fail-fast` gedraaid. Niet
-uitgevoerd: `cargo fmt --check`, `cargo clippy`, `cargo publish --dry-run`,
-`cargo deny`, `cargo audit`, een test in release-modus, een run op Rust 1.85,
-een GitHub Actions-run, fuzzing, mutatietests. Het CI-bestand noemt fmt,
-clippy, deny en audit; die jobs zijn voor deze boom niet gedraaid omdat hij
-niet is gepusht.
+Deze meting draaide alleen de vier opdrachten hierboven. Niet uitgevoerd:
+`cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
+run. Een run op Rust 1.85: not run. Een GitHub Actions-run: not run. Fuzzing:
+not run. Mutatietests: not run. Het CI-bestand noemt fmt, clippy, deny en
+audit; de deny- en audit-jobs zijn voor deze boom niet gedraaid.
 
 Deze pagina legt controles vast. Het is geen garantie en geen fuzzrapport.
 

@@ -4,14 +4,21 @@ Dutch version: [QUALITY.nl.md](QUALITY.nl.md).
 
 ## Measured
 
-Tested code commit: `a4a1308` (the last commit that is not a pure document;
-every commit after it touches only documentation files).
+Tested commit: `db1e7bb` (`origin/main`), in a clean worktree.
 
-Date (`date +%F`): 2026-11-24. Machine: linux x86_64, Rust from `~/.cargo/bin`.
-Command: `cargo test --locked --no-fail-fast -j 2`.
+Date (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
+1.99.0, clippy 0.1.99, from `~/.cargo/bin`.
 
-Result: 167 tests passed, 0 failed, 0 ignored (102 in the library, 0 in the
-binary, 12 in `tests/claims.rs`, 53 in `tests/cli.rs`, 0 doc-tests).
+| Command | Result |
+| --- | --- |
+| `cargo fmt --check` | passed, exit 0 |
+| `cargo clippy --all-targets --locked -- -D warnings` | passed, exit 0, no warnings |
+| `cargo test --locked` | passed, exit 0 |
+| `cargo test --release --locked` | passed, exit 0 |
+
+Result of each test run: 167 tests passed, 0 failed, 0 ignored (102 in the
+library, 0 in the binary, 12 in `tests/claims.rs`, 53 in `tests/cli.rs`, 0
+doc-tests).
 
 `tests/claims.rs` counts the `#[test]` functions and fails if README or this
 file state another number.
@@ -22,11 +29,11 @@ file state another number.
 
 ## Not run
 
-On this run only `cargo test --locked --no-fail-fast` was run. Not run:
-`cargo fmt --check`, `cargo clippy`, `cargo publish --dry-run`, `cargo deny`,
-`cargo audit`, a release-mode test run, a run on Rust 1.85, a GitHub Actions
-run, fuzzing, mutation testing. The CI file lists fmt, clippy, deny and audit;
-those jobs have not run for this tree because it is not pushed.
+This measurement ran the four commands above and nothing else. Not run:
+`cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
+run. A run on Rust 1.85: not run. A GitHub Actions run: not run. Fuzzing: not
+run. Mutation testing: not run. The CI file lists fmt, clippy, deny and audit;
+the deny and audit jobs have not run for this tree.
 
 This page records checks. It is not a guarantee and it is not a fuzz report.
 
