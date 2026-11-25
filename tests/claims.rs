@@ -176,8 +176,8 @@ fn readme_commands_cover_both_rate_styles() {
 
 #[test]
 fn readme_output_block_is_the_golden_table() {
-    let readme = read("README.md");
-    let golden = read("examples/expected.txt");
+    let readme = read("README.md").replace("\r\n", "\n");
+    let golden = read("examples/expected.txt").replace("\r\n", "\n");
     let table: Vec<&str> = golden.lines().take(6).collect();
     assert_eq!(table.len(), 6);
     assert!(
