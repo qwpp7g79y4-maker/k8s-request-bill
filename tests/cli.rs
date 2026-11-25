@@ -106,7 +106,9 @@ fn golden_table_matches_examples() {
         "0.004",
         "--limits",
     ]);
-    let want = std::fs::read_to_string(root().join("examples/expected.txt")).unwrap();
+    let want = std::fs::read_to_string(root().join("examples/expected.txt"))
+        .unwrap()
+        .replace("\r\n", "\n");
     assert_eq!(got, want);
 }
 
@@ -124,7 +126,9 @@ fn golden_json_matches_examples() {
         "--format",
         "json",
     ]);
-    let want = std::fs::read_to_string(root().join("examples/expected.json")).unwrap();
+    let want = std::fs::read_to_string(root().join("examples/expected.json"))
+        .unwrap()
+        .replace("\r\n", "\n");
     assert_eq!(got, want);
 }
 
