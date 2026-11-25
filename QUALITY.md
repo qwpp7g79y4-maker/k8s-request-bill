@@ -16,7 +16,7 @@ Date (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
 | `cargo test --locked` | passed, exit 0 |
 | `cargo test --release --locked` | passed, exit 0 |
 
-Result of each test run: 167 tests passed, 0 failed, 0 ignored (102 in the
+Result of each test run: 169 tests passed, 0 failed, 0 ignored (102 in the
 library, 0 in the binary, 12 in `tests/claims.rs`, 53 in `tests/cli.rs`, 0
 doc-tests).
 

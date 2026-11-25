@@ -687,3 +687,35 @@ fn works_without_network_or_cluster_config() {
         .assert()
         .success();
 }
+
+#[cfg(unix)]
+#[test]
+fn closed_stdout_at_start_is_exit_2_with_a_message() {
+    let exe = assert_cmd::cargo::cargo_bin("k8s-request-bill");
+    let out = std::process::Command::new("sh")
+        .arg("-c")
+        .arg("exec \"$0\" \"$@\" >&-")
+        .arg(exe)
+        .arg(example("pods.json"))
+        .output()
+        .unwrap();
+    assert_eq!(out.status.code(), Some(2));
+    assert!(
+        String::from_utf8_lossy(&out.stderr).contains("stdout is closed"),
+        "{}",
+        String::from_utf8_lossy(&out.stderr)
+    );
+}
+
+#[cfg(unix)]
+#[test]
+fn dev_null_stdout_stays_exit_0() {
+    let out = std::process::Command::new("sh")
+        .arg("-c")
+        .arg("exec \"$0\" \"$@\" >/dev/null")
+        .arg(assert_cmd::cargo::cargo_bin("k8s-request-bill"))
+        .arg(example("pods.json"))
+        .output()
+        .unwrap();
+    assert_eq!(out.status.code(), Some(0));
+}

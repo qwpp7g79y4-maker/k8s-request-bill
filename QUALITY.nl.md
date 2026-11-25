@@ -16,7 +16,7 @@ Datum (`date +%F`): 2026-11-25. Machine: linux x86_64, cargo 1.99.0, rustc
 | `cargo test --locked` | geslaagd, exit 0 |
 | `cargo test --release --locked` | geslaagd, exit 0 |
 
-Uitkomst van elke testrun: 167 tests geslaagd, 0 mislukt, 0 genegeerd (102 in
+Uitkomst van elke testrun: 169 tests geslaagd, 0 mislukt, 0 genegeerd (102 in
 de bibliotheek, 0 in het binary, 12 in `tests/claims.rs`, 53 in
 `tests/cli.rs`, 0 doctests).
 

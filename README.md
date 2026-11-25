@@ -159,7 +159,8 @@ need usage or a rate are `null` when that input was not given.
 ## Exit codes
 
 `0` success, `1` unreadable or invalid input (the message names the file, pod
-and container), `2` bad command line.
+and container), `2` bad command line, or standard output closed at start
+(`>&-`; a real `/dev/null` is fine and gives `0`).
 
 ## Limitations
 
@@ -174,7 +175,7 @@ Changes are listed in `CHANGELOG.md`. A patch should come with a test.
 
 ## Quality
 
-167 tests; formatting and clippy with `-D warnings` are clean.
+169 tests; formatting and clippy with `-D warnings` are clean.
 See [QUALITY.md](QUALITY.md) for the claim-to-test map.
 
 ## License

@@ -4,7 +4,13 @@ use std::process::ExitCode;
 use clap::Parser;
 use k8s_request_bill::cli::{execute, Cli};
 
+mod stdout_probe;
+
 fn main() -> ExitCode {
+    if stdout_probe::stdout_was_closed_at_start() {
+        eprintln!("error: stdout is closed");
+        return ExitCode::from(2);
+    }
     let cli = Cli::parse();
     match execute(&cli, &mut io::stdin().lock()) {
         Ok(text) => {

@@ -164,7 +164,8 @@ tarief nodig hebben zijn `null` als die invoer ontbrak.
 ## Afsluitcodes
 
 `0` gelukt, `1` onleesbare of ongeldige invoer (de melding noemt bestand, pod en
-container), `2` foute opdrachtregel.
+container), `2` foute opdrachtregel, of standaarduitvoer die bij de start gesloten is
+(`>&-`; een echte `/dev/null` is goed en geeft `0`).
 
 ## Beperkingen
 
@@ -181,7 +182,7 @@ hebben.
 
 ## Kwaliteit
 
-167 tests; formattering en clippy met `-D warnings` zijn schoon.
+169 tests; formattering en clippy met `-D warnings` zijn schoon.
 Zie [QUALITY.nl.md](QUALITY.nl.md) voor de kaart van bewering naar test.
 
 ## Licentie
