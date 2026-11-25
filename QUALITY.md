@@ -36,7 +36,7 @@ Date (`date +%F`): 2026-11-25. Same tree, run with toolchain 1.85: cargo
 
 The 1.85 test run: 169 tests passed, 0 failed, 0 ignored (102 in the library,
 0 in the binary, 12 in `tests/claims.rs`, 55 in `tests/cli.rs`, 0 doc-tests).
-`cargo +1.85 test --release --locked`: not run.
+`cargo +1.85 test --release --locked`: passed, exit 0, 169 tests passed, 0 failed (102 + 0 + 12 + 55, 0 doc-tests), 2026-11-25.
 
 - Version 0.1.0, `rust-version` 1.85, licences `MIT OR Apache-2.0`.
 - No network or Kubernetes client crates (checked against `Cargo.lock` by
@@ -46,7 +46,7 @@ The 1.85 test run: 169 tests passed, 0 failed, 0 ignored (102 in the library,
 
 The stable measurement ran the four commands above and nothing else; the 1.85 run ran the three commands in its own table. Not run:
 Windows: not run. macOS: not run. The closed-stdout probe is active on Linux only; elsewhere it records nothing and the exit code stays 0. `cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
-run. A release test run on Rust 1.85: not run. A GitHub Actions run: not run (the earlier run 45698461182 on a6d3620 failed on macOS and macOS-intel on this test). Fuzzing: not
+run. A release test run on Rust 1.85: passed (169 tests, 2026-11-25). A GitHub Actions run: not run (the earlier run 45698461182 on a6d3620 failed on macOS and macOS-intel on this test). Fuzzing: not
 run. Mutation testing: not run. The CI file lists fmt, clippy, deny and audit;
 the deny and audit jobs have not run for this tree.
 

@@ -36,7 +36,7 @@ cargo 1.85.1, rustc 1.85.1, clippy 0.1.85, uit `~/.cargo/bin` (`cargo +1.85`).
 
 De testrun op 1.85: 169 tests geslaagd, 0 mislukt, 0 genegeerd (102 in de
 bibliotheek, 0 in het binary, 12 in `tests/claims.rs`, 55 in `tests/cli.rs`,
-0 doctests). `cargo +1.85 test --release --locked`: not run.
+0 doctests). `cargo +1.85 test --release --locked`: geslaagd, exit 0, 169 tests geslaagd, 0 mislukt (102 + 0 + 12 + 55, 0 doctests), 2026-11-25.
 
 - Versie 0.1.0, `rust-version` 1.85, licenties `MIT OR Apache-2.0`.
 - Geen netwerk- of Kubernetes-clientcrates (gecontroleerd tegen `Cargo.lock`
@@ -46,7 +46,7 @@ bibliotheek, 0 in het binary, 12 in `tests/claims.rs`, 55 in `tests/cli.rs`,
 
 De stabiele meting draaide alleen de vier opdrachten hierboven; de 1.85-run draaide de drie opdrachten in zijn eigen tabel. Niet uitgevoerd:
 Windows: not run. macOS: not run. De probe voor gesloten stdout werkt alleen op Linux; elders legt hij niets vast en blijft de exitcode 0. `cargo publish --dry-run`: not run. `cargo deny`: not run. `cargo audit`: not
-run. Een release-testrun op Rust 1.85: not run. Een GitHub Actions-run van deze commit: not run (de eerdere run 45698461182 op a6d3620 faalde op macOS en macOS-intel op deze test). Fuzzing:
+run. Een release-testrun op Rust 1.85: geslaagd (169 tests, 2026-11-25). Een GitHub Actions-run van deze commit: not run (de eerdere run 45698461182 op a6d3620 faalde op macOS en macOS-intel op deze test). Fuzzing:
 not run. Mutatietests: not run. Het CI-bestand noemt fmt, clippy, deny en
 audit; de deny- en audit-jobs zijn voor deze boom niet gedraaid.
 
