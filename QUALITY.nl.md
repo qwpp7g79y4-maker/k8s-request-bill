@@ -1,6 +1,6 @@
 # Kwaliteit
 
-pep: 8.6
+pep: 10
 
 Engelse versie: [QUALITY.md](QUALITY.md).
 

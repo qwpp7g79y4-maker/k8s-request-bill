@@ -1,6 +1,6 @@
 # Quality
 
-pep: 8.6
+pep: 10
 
 Dutch version: [QUALITY.nl.md](QUALITY.nl.md).
 
