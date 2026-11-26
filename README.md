@@ -36,7 +36,7 @@ Then run the tool on the saved files:
 k8s-request-bill pods.json --usage metrics.json
 ```
 
-## Aan de slag in 5 minuten
+## Quickstart in 5 minutes
 
 You do not need a cluster to try it. The repository holds a small sample in
 `examples/`. The commands below only read it and write nothing.
