@@ -1,5 +1,7 @@
 # k8s-request-bill
 
+[![crates.io](https://img.shields.io/crates/v/k8s-request-bill.svg)](https://crates.io/crates/k8s-request-bill) [![downloads](https://img.shields.io/crates/d/k8s-request-bill.svg)](https://crates.io/crates/k8s-request-bill) [![CI](https://github.com/qwpp7g79y4-maker/k8s-request-bill/actions/workflows/ci.yml/badge.svg)](https://github.com/qwpp7g79y4-maker/k8s-request-bill/actions/workflows/ci.yml) [![PEPAI checked](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fqwpp7g79y4-maker%2Fk8s-request-bill%2Fmain%2F.github%2Fbadge.json)](QUALITY.md) [![MSRV 1.85](https://img.shields.io/badge/MSRV-1.85-blue.svg)](https://github.com/qwpp7g79y4-maker/k8s-request-bill/blob/main/Cargo.toml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](https://github.com/qwpp7g79y4-maker/k8s-request-bill#license)
+
 Offline overprovisioning report for Kubernetes. It reads saved `kubectl` JSON
 (pod requests and limits, and optionally usage) and shows, **per namespace**,
 what is requested, what is used, and what is left over, in **vCPU** and **GiB**,
@@ -172,6 +174,8 @@ VPA or HPA advice, no node-level bin-packing. Only the pods you give it.
 Small, single-purpose tool, maintained by one person. Bugs and patches come in
 through Issues; see `CONTRIBUTING.md`. Security reports follow `SECURITY.md`.
 Changes are listed in `CHANGELOG.md`. A patch should come with a test.
+
+After a release the tool is dormant: a new version appears only for a reported bug, a request, or a security problem. Security always comes first.
 
 ## Quality
 

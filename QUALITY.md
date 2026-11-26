@@ -1,5 +1,7 @@
 # Quality
 
+pep: 8.6
+
 Dutch version: [QUALITY.nl.md](QUALITY.nl.md).
 
 ## Measured

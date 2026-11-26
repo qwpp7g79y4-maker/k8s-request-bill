@@ -1,5 +1,7 @@
 # Kwaliteit
 
+pep: 8.6
+
 Engelse versie: [QUALITY.md](QUALITY.md).
 
 ## Gemeten
