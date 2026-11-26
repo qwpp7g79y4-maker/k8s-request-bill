@@ -12,7 +12,7 @@ homepage = "https://github.com/qwpp7g79y4-maker/k8s-request-bill"
 documentation = "https://github.com/qwpp7g79y4-maker/k8s-request-bill"
 keywords = ["kubernetes", "kubectl", "cost", "requests", "cli"]
 categories = ["command-line-utilities", "development-tools"]
-exclude = [".github/"]
+exclude = [".github/", "*-plugin/"]
 
 [lib]
 name = "k8s_request_bill"
