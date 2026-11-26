@@ -8,7 +8,6 @@ license = "MIT OR Apache-2.0"
 description = "Offline overprovisioning of Kubernetes requests vs usage from kubectl JSON"
 readme = "README.md"
 repository = "https://github.com/qwpp7g79y4-maker/k8s-request-bill"
-homepage = "https://github.com/qwpp7g79y4-maker/k8s-request-bill"
 documentation = "https://github.com/qwpp7g79y4-maker/k8s-request-bill"
 keywords = ["kubernetes", "kubectl", "cost", "requests", "cli"]
 categories = ["command-line-utilities", "development-tools"]
