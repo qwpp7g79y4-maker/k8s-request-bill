@@ -22,7 +22,7 @@ Versie 0.1.0. Rust 1.85 of nieuwer. Vanuit een checkout:
 cargo install --path .
 ```
 
-Zodra de crate op crates.io staat, werkt ook `cargo install k8s-request-bill`.
+Vanaf crates.io: `cargo install k8s-request-bill`.
 
 ## Snelstart
 
